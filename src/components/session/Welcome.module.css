@@ -1,0 +1,101 @@
+.container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--message-list-max-width);
+  margin: auto;
+  padding: 0 32px 64px;
+}
+
+/* Logo 与问候语同行居中，贴近官网版式 */
+.greetingRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 21px;
+}
+
+.logo {
+  display: block;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.greeting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 21px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--dsw-alias-label-primary);
+}
+
+.greetingRow .greeting {
+  margin-bottom: 0;
+}
+
+@media (max-width: 439px) {
+  .logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+  }
+
+  .greetingRow {
+    gap: 8px;
+  }
+
+  .greeting {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 767.98px) and (pointer: coarse) {
+  .container {
+    flex-direction: column;
+  }
+
+  .welcome {
+    flex: 1;
+    min-height: 0;
+    justify-content: flex-end;
+    max-width: none;
+    margin: 0;
+    padding: 0 16px env(safe-area-inset-bottom);
+  }
+
+  .greetingRow {
+    flex: 1;
+    min-height: 0;
+    margin: 0 0 21px;
+  }
+
+  .greetingRow .greeting {
+    margin-bottom: 0;
+  }
+
+  /* 手机上免责声明不占位，让输入框真正吸底（桌面端保留） */
+  .caveat {
+    display: none;
+  }
+}

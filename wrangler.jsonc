@@ -1,0 +1,13 @@
+{
+  "name": "breeze",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-11-17",
+  "account_id": "a1e6a0b777f700fe31cf8cbcfe98f0f0",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
